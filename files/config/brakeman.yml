@@ -1,0 +1,6 @@
+---
+:run_all_checks: true
+:rails3: true
+:rails4: true
+:rails5: true
+:rails6: true

@@ -1,0 +1,54 @@
+---
+CommitMsg:
+  ALL:
+    enabled: false
+PreCommit:
+  ALL:
+    on_warn: fail
+  BrokenSymlinks:
+    enabled: true
+  BundleCheck:
+    enabled: true
+  BundleOutdated:
+    enabled: true
+  CaseConflicts:
+    enabled: true
+  DatabaseConsitency:
+    enabled: true
+    required_executable: database_consistency
+  ExecutePermissions:
+    enabled: true
+    exclude:
+      - "bin/*"
+  Fasterer:
+    enabled: true
+  FixMe:
+    enabled: true
+  HardTabs:
+    enabled: true
+  LineEndings:
+    enabled: true
+  LocalPathsInGemfile:
+    enabled: true
+  Mdl:
+    enabled: true
+    command: ["bundle", "exec", "mdl"]
+  MergeConflicts:
+    enabled: true
+  RailsBestPractices:
+    enabled: true
+  RailsSchemaUpToDate:
+    enabled: true
+  RuboCop:
+    enabled: true
+  RubySyntax:
+    enabled: true
+  TrailingWhitespace:
+    enabled: true
+  YamlLint:
+    enabled: true
+    flags: ['-s']
+PrePush:
+  Brakeman:
+    enabled: true
+    flags: ['--exit-on-warn', '--quiet', '--summary', '-c', 'config/brakeman.yml']
